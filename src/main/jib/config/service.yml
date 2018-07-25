@@ -1,0 +1,15 @@
+server:
+  type: simple
+  applicationContextPath: /
+  adminContextPath: /admin
+  connector:
+    type: http
+    port: 8080
+  requestLog:
+    appenders:
+      - type: file
+        timeZone: UTC
+        currentLogFilename: /tmp/brandon-hello-service-requests.log
+        archive: true
+        archivedLogFilenamePattern: /tmp/brandon-hello-requests-%d.log.gz
+        archivedFileCount: 10
